@@ -3,3 +3,13 @@ html{
     
 }
 
+.barraNavegacion{
+
+    position: fixed;
+    top: 127px;
+    left: 12px;
+    width: 98%;
+    background-color: white;
+    z-index: 80;
+}
+

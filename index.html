@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="javascript.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -38,7 +39,7 @@
     </symbol>
   </svg>
   
-    <header>
+    <header class="header">
 
       <div class="px-3 py-2 bg-opacity-30 bg-info bg-gradient text-white">
         <div class="container">
@@ -62,7 +63,7 @@
                   <li>
                     <a href="#" class="nav-link text-white">
                       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#mensajes"></use></svg>
-                      Mensajes
+                      Mensajes <span class="badge bg-secondary">4</span>
                     </a>
                   </li>
                   <li>
@@ -79,8 +80,66 @@
                   </li>
                 </ul>
                 <div>
-                <button type="button" class="btn btn-light text-dark me-2">Inicio sesión</button>
-                <button type="button" class="btn btn-primary">Registrarme</button>
+                  <button type="button" class="btn btn-light text-dark me-2">Inicio sesión</button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrarme</button>
+                  <!-- Modal-->
+                
+                
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Completa los campos del formulario</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="row g-3">
+                                      <div class="col-md-12">
+                                        <label for="validationDefault01" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="validationDefault01" pattern="[a-zA-Z]+" required>
+                                      </div>
+                                      <div class="col-md-12">
+                                        <label for="validationDefault02" class="form-label">Apellido</label>
+                                        <input type="text" class="form-control" id="validationDefault02" pattern="[a-zA-Z]+"  required>
+                                      </div>
+                                      <div class="col-md-12">
+                                        <label for="validationDefaultUsername" class="form-label">Correo electrónico</label>
+                                        <div class="input-group">
+                                          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                          <input type="text" class="form-control" id="validationDefaultUsername"  pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]+"  aria-describedby="inputGroupPrepend2" required>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="validationDefault03" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control" id="validationDefault03" required>
+                                      </div>
+                                      <div class="col-md-6">
+                                        
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="validationDefault05" class="form-label">Código postal</label>
+                                        <input type="text" class="form-control" id="validationDefault05" required>
+                                      </div>
+                                      <div class="col-12">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                          <label class="form-check-label" for="invalidCheck2">
+                                            Acepta los términos y condiciones
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="col-12">
+                                        <button class="btn btn-primary" type="submit">Enviar formulario</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                 </div>
               </div>
             </div>
@@ -92,11 +151,12 @@
       </div>
     </div>
 <div >
-    </header>
+</header>
+   
         <!-- Barra de navegación-->
-
+<div class="barraNavegacion mx-auto ">
         <hr>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg ">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -133,20 +193,22 @@
                 </li>
               </ul>
             </div>
-            <form class="d-flex col-6" role="search">
+            <form class="d-flex col-lg-5 col-md-8 col-sm-9" role="search">
               <input class="form-control me-2 text-primary" type="search" placeholder="Ej.Iphone" aria-label="Search">
               <button class="btn btn-outline-primary" type="submit">Buscar</button>
+
             </form>
           </div>
         </nav>
 
         <hr>
 </div>
+</div>
         <!-- Hasta aquí la barra de navegación-->
 
         <!-- Ahora añadimo una fotografía principal responsive-->
 
-        <div class="card mb-3" style="max-width: 100%; height: auto">
+        <div class="card mb-3" style="max-width: 100%; height: auto; padding-top: 120px;">
           <div class="row g-0">
             <div class="col-md-9">
               <img src="../pexels-kindelmedia-6994138.jpg" class="img-fluid rounded-start" alt="Manos dando y manos recibiendo cartas y paquetes">
@@ -165,9 +227,9 @@
 
          <!-- Tarjetas con productos-->
 
-         <h2>Lo mas buscado</h2>
+         <h2 class="py-5">Lo mas buscado</h2>
 
-         <div class="row row-cols-1 row-cols-md-6 g-4 d-flex">
+         <div class="row row-cols-1 row-cols-md-3 row-cols-sm-3 row-cols-lg-6 g-4 d-flex">
           <div class="col">
             <div class="card">
               <img src="../pexels-pixabay-221185.jpg" class="card-img-top" alt="...">
@@ -206,7 +268,7 @@
           </div>
           <div class="col">
             <div class="card">
-              <img src="../pexels-pixabay-221185.jpg" class="card-img-top" alt="...">
+              <img src="../pexels-lastly-699122.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Teléfonos</h5>
                 <p class="card-text"></p>
@@ -225,6 +287,16 @@
         </div>                  
 
         <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        
+    
+       <section>
+
+        <h2 class="py-5"></h2>
+
+       </section> 
+
+        <footer>
+
+        </footer>    
+
 </body>
 </html>
