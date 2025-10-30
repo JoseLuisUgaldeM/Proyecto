@@ -1,170 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link rel="stylesheet" href="estilo.css">
-    <script src="javascript.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
-    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" 
+  <link rel="stylesheet" href="estilo.css">
+  <script src="javascript.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="estilo.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>TrueChange</title>
+  <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <title>TrueChange</title>
 </head>
+
 <body>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        
+
     <symbol id="home" viewBox="0 0 16 16">
-      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+      <path
+        d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z">
+      </path>
     </symbol>
     <symbol id="speedometer2" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
-      
+      <path fill-rule="evenodd"
+        d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
+
     </symbol>
     <symbol id="mensajes" viewBox="0 0 16 16">
-      
-      <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-      <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
-      
+
+      <path
+        d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+      <path
+        d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+
     </symbol>
     <symbol id="people-circle" viewBox="0 0 16 16">
       <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+      <path fill-rule="evenodd"
+        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z">
+      </path>
     </symbol>
     <symbol id="grid" viewBox="0 0 16 16">
-      <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"/>
+      <path
+        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z" />
     </symbol>
   </svg>
-  
-    <header class="header">
 
-      <div class="px-3 py-2 bg-opacity-30 bg-info bg-gradient text-white">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-around">
-            <img src="../icono_proyecto.png" alt="icono de la aplicacion" width="100" height="100">
-           
-            
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-between nav-underline">
-              <li>
-                <a href="#" class="nav-link text-secondary">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"></use></svg>
-                      Inicio
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1 " width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
-                      Intercambios
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#mensajes"></use></svg>
-                      Mensajes <span class="badge bg-secondary">4</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1 " width="24" height="24"><use xlink:href="#grid"></use></svg>
-                      Favoritos
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
-                      Vendedores
-                    </a>
-                  </li>
-                </ul>
-                <div>
-                  <button type="button" class="btn btn-light text-dark me-2">Inicio sesión</button>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrarme</button>
-                  <!-- Modal-->
-                
-                
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Completa los campos del formulario</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <form class="row g-3">
-                                      <div class="col-md-12">
-                                        <label for="validationDefault01" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" id="validationDefault01" pattern="[a-zA-Z]+" required>
-                                      </div>
-                                      <div class="col-md-12">
-                                        <label for="validationDefault02" class="form-label">Apellido</label>
-                                        <input type="text" class="form-control" id="validationDefault02" pattern="[a-zA-Z]+"  required>
-                                      </div>
-                                      <div class="col-md-12">
-                                        <label for="validationDefaultUsername" class="form-label">Correo electrónico</label>
-                                        <div class="input-group">
-                                          <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                                          <input type="text" class="form-control" id="validationDefaultUsername"  pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]+"  aria-describedby="inputGroupPrepend2" required>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <label for="validationDefault03" class="form-label">Ciudad</label>
-                                        <input type="text" class="form-control" id="validationDefault03" required>
-                                      </div>
-                                      <div class="col-md-6">
-                                        
-                                      </div>
-                                      <div class="col-md-6">
-                                        <label for="validationDefault05" class="form-label">Código postal</label>
-                                        <input type="text" class="form-control" id="validationDefault05" required>
-                                      </div>
-                                      <div class="col-12">
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                          <label class="form-check-label" for="invalidCheck2">
-                                            Acepta los términos y condiciones
-                                          </label>
-                                        </div>
-                                      </div>
-                                      <div class="col-12">
-                                        <button class="btn btn-primary" type="submit">Enviar formulario</button>
-                                      </div>
-                                    </form>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Guardar cambios</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+  <header class="header">
+
+    <div class="px-3 py-2 bg-opacity-30 bg-info bg-gradient text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-around">
+          <img src="../icono_proyecto.png" alt="icono de la aplicacion" width="100" height="100">
+
+
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-between nav-underline">
+            <li>
+              <a href="#" class="nav-link text-secondary">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#home"></use>
+                </svg>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1 " width="24" height="24">
+                  <use xlink:href="#speedometer2"></use>
+                </svg>
+                Intercambios
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#mensajes"></use>
+                </svg>
+                Mensajes <span class="badge bg-danger">4</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1 " width="24" height="24">
+                  <use xlink:href="#grid"></use>
+                </svg>
+                Favoritos
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                  <use xlink:href="#people-circle"></use>
+                </svg>
+                Vendedores
+              </a>
+            </li>
+          </ul>
+          <div>
+            <button type="button" class="btn btn-light text-dark me-2" data-bs-toggle="modal"
+              data-bs-target="#exampleModal2">Inicio sesión</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Registrarme</button>
+
+            <!-- Modal registro-->
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Completa los campos del formulario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3">
+                      <div class="col-md-12">
+                        <label for="validationDefault01" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="validationDefault01" pattern="[a-zA-Z]+" required>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="validationDefault02" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="validationDefault02" pattern="[a-zA-Z]+" required>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="validationDefaultUsername" class="form-label">Correo electrónico</label>
+                        <div class="input-group">
+                          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                          <input type="text" class="form-control" id="validationDefaultUsername"
+                            pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]+" aria-describedby="inputGroupPrepend2"
+                            required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationDefault03" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" id="validationDefault03" required>
+                      </div>
+                      <div class="col-md-6">
+
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationDefault05" class="form-label">Código postal</label>
+                        <input type="text" class="form-control" id="validationDefault05" required>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                          <label class="form-check-label" for="invalidCheck2">
+                            Acepta los términos y condiciones
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Enviar formulario</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal inicio de sesión-->
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¡¡Bienvenido/a a TrueChange!!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3">
+                      <div class="col-md-12">
+                        <label for="validationDefault01" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="validationDefault01" pattern="[a-zA-Z]+" required>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="validationDefault02" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="validationDefault02" required>
+                      </div>
+
+                      <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Entrar</button>
+                      </div>
+                    </form>
+                  </div>
+
+
                 </div>
               </div>
             </div>
           </div>
-          
-          
-          
         </div>
       </div>
     </div>
-<div >
-</header>
-   
-        <!-- Barra de navegación-->
-<div class="barraNavegacion mx-auto ">
-        <hr>
-        <nav class="navbar navbar-expand-lg ">
-          <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-item nav-underline">
-              <li class="nav-item">
-              <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false" href="#">Categorias</a>
+
+
+
+    </div>
+    </div>
+    </div>
+    <div>
+  </header>
+
+  <!-- Barra de navegación-->
+  <div class="barraNavegacion mx-auto ">
+    <hr>
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-item nav-underline">
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                href="#">Categorias</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Electrónica</a></li>
                 <li><a class="dropdown-item" href="#">Informática</a></li>
@@ -174,129 +237,239 @@
                 <li><a class="dropdown-item" href="#">Motos</a></li>
               </ul>
             </li>
-           
-            
-                <li class="nav-item ">
-                  <a class="nav-link" href="#" >Electronica</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Informática</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Hogar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" >Coches</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link"  href="#">Motos</a>
-                </li>
-              </ul>
-            </div>
-            <form class="d-flex col-lg-5 col-md-8 col-sm-9" role="search">
-              <input class="form-control me-2 text-primary" type="search" placeholder="Ej.Iphone" aria-label="Search">
-              <button class="btn btn-outline-primary" type="submit">Buscar</button>
 
-            </form>
-          </div>
-        </nav>
 
-        <hr>
-</div>
-</div>
-        <!-- Hasta aquí la barra de navegación-->
-
-        <!-- Ahora añadimo una fotografía principal responsive-->
-
-        <div class="card mb-3" style="max-width: 100%; height: auto; padding-top: 120px;">
-          <div class="row g-0">
-            <div class="col-md-9">
-              <img src="../pexels-kindelmedia-6994138.jpg" class="img-fluid rounded-start" alt="Manos dando y manos recibiendo cartas y paquetes">
-            </div>
-            <div class="col-md-3">
-              <div class="card-body">
-                <h2 class="card-title">TrueChange</h2>
-                <p class="card-text">Intercambia todo lo que no necesitas por aquello que te hace falta y sin gastar un euro. Contribuye con una 
-                  ecomomía circular y el consumo moderado y sostenible.
-                </p>
-                <p class="card-text"><small class="text-muted">Última actualización hace 3 minutos</small></p>
-              </div>
-            </div>
-          </div>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Electronica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Informática</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hogar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Coches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Motos</a>
+            </li>
+          </ul>
         </div>
+        <form class="d-flex col-lg-5 col-md-8 col-sm-9" role="search">
+          <input class="form-control me-2 text-primary" type="search" placeholder="Ej.Iphone" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
 
-         <!-- Tarjetas con productos-->
+        </form>
+      </div>
+    </nav>
 
-         <h2 class="py-5">Lo mas buscado</h2>
+    <hr>
+  </div>
+  </div>
+  <!-- Hasta aquí la barra de navegación-->
 
-         <div class="row row-cols-1 row-cols-md-3 row-cols-sm-3 row-cols-lg-6 g-4 d-flex">
-          <div class="col">
-            <div class="card">
-              <img src="../pexels-pixabay-221185.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Tablet</h5>
-                <p class="card-text"></p>
-              </div>
-            </div>
+  <!-- Ahora añadimo una fotografía principal responsive-->
+
+  <div class="card mb-3" style="max-width: 100%; height: auto; padding-top: 120px;">
+    <div class="row g-0">
+      <div class="col-md-9">
+        <img src="../pexels-kindelmedia-6994138.jpg" class="img-fluid rounded-start"
+          alt="Manos dando y manos recibiendo cartas y paquetes">
+      </div>
+      <div class="col-md-3">
+        <div class="card-body">
+          <h2 class="card-title">TrueChange</h2>
+          <p class="card-text">Intercambia todo lo que no necesitas por aquello que te hace falta y sin gastar un euro.
+            Contribuye con una
+            ecomomía circular y el consumo moderado y sostenible.
+          </p>
+          <p class="card-text"><small class="text-muted">Última actualización hace 3 minutos</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjetas con productos-->
+
+  <h2 class="py-5">Lo mas buscado</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 row-cols-sm-3 row-cols-lg-6 g-4 d-flex">
+    <div class="col">
+      <div class="card cards">
+        <img src="../pexels-pixabay-221185.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Tablet</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card cards">
+        <img src="../pexels-tuurt-812264.jpg" class="card-img-top"
+          alt="Foto de Tuur  Tisseghem: https://www.pexels.com/es-es/foto/foto-de-una-macbook-air-812264/">
+        <div class="card-body">
+          <h5 class="card-title">Portátiles</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card cards">
+        <img src="../pexels-mikebirdy-116675.jpg" class="card-img-top"
+          alt="Foto de Mike Bird: https://www.pexels.com/es-es/foto/land-rover-range-rover-suv-blanco-en-carretera-116675/">
+        <div class="card-body">
+          <h5 class="card-title">Coches</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card cards">
+        <img src="../pexels-pixabay-159192.jpg" class="card-img-top"
+          alt="Foto de Pixabay: https://www.pexels.com/es-es/foto/scooter-ciclomotor-rojo-y-negro-junto-a-la-hierba-verde-159192/">
+        <div class="card-body">
+          <h5 class="card-title">Motos</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card cards">
+        <img src="../pexels-lastly-699122.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Teléfonos</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card cards">
+        <img src="../pexels-quang-viet-nguyen-107013384-13257109.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Joyería</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <section>
+
+    <h2 class="py-5"></h2>
+
+  </section>
+
+  <footer>
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+    <footer class="bg-dark text-center text-lg-start text-white">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">See other books</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>Bestsellers</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>All books</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-user-edit fa-fw fa-sm me-2"></i>Our authors</a>
+              </li>
+            </ul>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="../pexels-tuurt-812264.jpg" class="card-img-top" alt="Foto de Tuur  Tisseghem: https://www.pexels.com/es-es/foto/foto-de-una-macbook-air-812264/">
-              <div class="card-body">
-                <h5 class="card-title">Portátiles</h5>
-                <p class="card-text"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="../pexels-mikebirdy-116675.jpg" class="card-img-top" alt="Foto de Mike Bird: https://www.pexels.com/es-es/foto/land-rover-range-rover-suv-blanco-en-carretera-116675/">
-              <div class="card-body">
-                <h5 class="card-title">Coches</h5>
-                <p class="card-text"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="../pexels-pixabay-159192.jpg" class="card-img-top" alt="Foto de Pixabay: https://www.pexels.com/es-es/foto/scooter-ciclomotor-rojo-y-negro-junto-a-la-hierba-verde-159192/">
-              <div class="card-body">
-                <h5 class="card-title">Motos</h5>
-                <p class="card-text"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="../pexels-lastly-699122.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Teléfonos</h5>
-                <p class="card-text"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="../pexels-quang-viet-nguyen-107013384-13257109.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Joyería</h5>
-                <p class="card-text"></p>
-              </div>
-            </div>
-          </div>
-        </div>                  
+          <!--Grid column-->
 
-        <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
-       <section>
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Execution of the contract</h5>
 
-        <h2 class="py-5"></h2>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Supply</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>Returns</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulations</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Privacy policy</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
 
-       </section> 
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Publishing house</h5>
 
-        <footer>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white">The BookStore</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">123 Street</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">05765 NY</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-briefcase fa-fw fa-sm me-2"></i>Send us a book</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
 
-        </footer>    
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Write to us</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>Help in purchasing</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Check the order
+                  status</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white"><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Join the newsletter</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2025 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">TrueChange</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    </div>
+    <!-- End of .container -->
+
+  </footer>
 
 </body>
+
 </html>
