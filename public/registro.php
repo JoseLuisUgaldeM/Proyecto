@@ -35,7 +35,7 @@ if ($usuario->crearUsuario($nombre, $apellido1, $apellido2,$email, $password, $a
 
     $_SESSION['inicioSession'] = true;
 
-    header("Location:index.php");
+    header("Location:sesionIniciada.php");
 
 }
 

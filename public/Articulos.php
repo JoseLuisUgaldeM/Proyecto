@@ -29,6 +29,12 @@ class Articulos
             ':estado' => $estado
 
         ]);
+
+        if ($success) {
+        return $this->db->lastInsertId();
+        } else {
+            return false; 
+        }
     }
 
      public function buscarArticuloPorTitulo($titulo) {
@@ -74,6 +80,6 @@ class Articulos
 
         $sql = "SELECT MAX(id) FROM articulos ";
           $stmt = $this->db->query($sql);
-        return $stmt->fetchAll();
+       return $stmt->fetchColumn();
     }
 }

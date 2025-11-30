@@ -1,6 +1,8 @@
 <?php 
 
-require("../config/Database.php");
+
+
+require ("../public/Articulos_fotos.php");
 
 require ("../public/Articulos.php");
 
@@ -29,19 +31,52 @@ if(isset($_POST['publicar'])){
 
     $articulo->subirArticulo($id_usuario, $titulo,$descripcion,$categoria, $estado);
 
+    $articulo_id = $articulo->idUltimoArticulo();
 
-     header("Location: ../public/sesionIniciada.php");
- 
+    $directorioSubidas = "../public/imagenes/uploads/";
+
+     $nombreOriginal = $_FILES["foto"]["name"];
+    $tempArchivo = $_FILES["foto"]["tmp_name"];
+    $extension = pathinfo($nombreOriginal, PATHINFO_EXTENSION);
+
+    // Generar un nombre único para evitar sobrescrituras y problemas de seguridad
+    $nombreGuardado = uniqid() . "." . $extension;
+    $rutaCompleta = $directorioSubidas . $nombreGuardado;
+
+    // Mover el archivo de la carpeta temporal a la carpeta permanente
+    if (move_uploaded_file($tempArchivo, $rutaCompleta)) {
+        try {
+            // Guardar solo la ruta relativa en la base de datos
+            $articulofoto = new Articulos_fotos($database);
+           
+            $articulofoto->subirFotoArticulo( $articulo_id, $rutaCompleta);
+
+            echo "La imagen se ha subido correctamente. Ruta guardada: " . $rutaCompleta;
+
+           
+
+        } catch (PDOException $e) {
+            die("Error al guardar la ruta en la DB: " . $e->getMessage());
+        }
+    } else {
+        echo "Error al mover el archivo subido.";
+    }
+
+        $usuarioNombre =$_SESSION['usuarioNombre'];
+        $id_usuario =$_SESSION['id_usuario'];
+
+      
+
+
+           
+
+      
+    }
+
 }
 
-    
-
-}else{
-
-        echo "<script>alert('Registrese o inicie sesión para acceder.');</script>";
-
-        header("Location: index.php");
-
-}
+header("Location:../public/sesionIniciada.php");
 
 ?>
+
+

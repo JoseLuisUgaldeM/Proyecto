@@ -9,8 +9,8 @@ class Usuario {
         $this->db = $database->getConnection();
     }
 
-    public function crearUsuario($nombre, $apellido1, $apellido2, $email, $password, $avatar, $ciudad) {
-        $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, email, password, avatar, ciudad) VALUES (:nombre, :apellido1, :apellido2, :email, :password, :avatar, :ciudad)";
+    public function crearUsuario($nombre, $apellido1, $apellido2, $email, $password, $ciudad) {
+        $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, email, password, ciudad) VALUES (:nombre, :apellido1, :apellido2, :email, :password, :ciudad)";
         $stmt = $this->db->prepare($sql); 
         return $stmt->execute([
             ':nombre' => $nombre,
@@ -18,7 +18,6 @@ class Usuario {
             ':password' => password_hash($password, PASSWORD_BCRYPT),
             ':apellido1' => $apellido1,
             ':apellido2' => $apellido2,
-            ':avatar' => $avatar,
             ':ciudad' => $ciudad
 
         ]);
@@ -28,6 +27,14 @@ class Usuario {
         $sql = "SELECT * FROM usuarios WHERE email = :email";
         $stmt = $this->db->prepare($sql);
         $stmt->execute([':email' => $email]);
+        return $stmt->fetch();
+    }
+
+       public function cambiarAvatar($id_usuario, $avatar) {
+        $sql = "UPDATE usuarios SET avatar = :avatar WHERE id = :id_usuario";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':id_usuario' => $id_usuario, ':avatar'=> $avatar]);
+        echo $avatar;
         return $stmt->fetch();
     }
 

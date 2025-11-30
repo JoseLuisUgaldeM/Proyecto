@@ -13,5 +13,17 @@ require "../config/Database.php";
 
 
         
+        public function subirFotoArticulo($articulo_id, $ruta_foto){
 
+            $sql = "INSERT INTO articulos_fotos ( articulo_id, ruta_foto ) VALUES ( :articulo_id, :ruta_foto)";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([
+
+            ':articulo_id' => $articulo_id,
+            ':ruta_foto' => $ruta_foto,
+       
+
+        ]);
+
+        }
 }

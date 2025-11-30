@@ -1,7 +1,11 @@
 
 <?php
-require("Usuario.php");
-require("Usuario.php");
+require("../public/Usuario.php");
+
+$database = new Database();
+
+$db = $database->getConnection();
+
 session_start();
 $target_dir = "../public/imagenes/uploads"; // Directorio donde se guardarán las imágenes
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -43,28 +47,23 @@ if ($uploadOk == 0) {
 } else {
     // move_uploaded_file mueve el archivo temporal a la ubicación final
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        require("conexion.php");
+        
         $usuarioNombre =$_SESSION['usuarioNombre'];
         $id_usuario =$_SESSION['id_usuario'];
 
-        $sqlBorrar = "DELETE FROM fotoPerfil WHERE id_usuario = $id_usuario";
+      
+        $usuario = new Usuario($database);
 
-        $conexion->query($sqlBorrar);
-         $sql = "INSERT INTO fotoPerfil ( nombre, ruta, id_usuario) VALUES ( '$usuarioNombre', '$target_file', $id_usuario)";
+     $usuario ->cambiarAvatar( $id_usuario, $target_file);
 
-    if ($conexion->query($sql) === TRUE) {
-        echo "Ruta guardada en la BD correctamente";
-    } else {
-        echo "Error al guardar ruta: " . $sql . "<br>" . $conn->error;
-    }
+           
 
-
-        echo "El archivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " ha sido subido.";
-    } else {
-        echo "Lo sentimos, hubo un error al subir tu archivo.";
+      
     }
 }
 
-header("Location:iniciar.php");
+
+header("Location:../public/sesionIniciada.php");
+
 ?>
 

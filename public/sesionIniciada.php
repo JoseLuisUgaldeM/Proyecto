@@ -31,10 +31,10 @@ if ($_SESSION['inicioSesion'] == true) {
 
 
 
+    $_SESSION['usuarioNombre'] = $nombreUsuario;
 
 
-
-
+    $_SESSION['avatar'] =  $datosUsuario['avatar'];
 
 
     $todos = $usuario->listarUsuarios();
@@ -84,10 +84,13 @@ if ($_SESSION['inicioSesion'] == true) {
 
 
                         <div class="dropdown"> <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="imagenes/electronica.jpg" alt="Foto de perfil " width="60" height="60" class="rounded-circle me-2">
-                                <strong> <?php print($nombreUsuario) ?></strong> </a>
+                                <img src=<?php print($_SESSION['avatar']) ?> alt="Foto de perfil " width="60" height="60" class="rounded-circle me-2">
+                                <strong> <?php print($_SESSION['usuarioNombre']) ?></strong> </a>
+
+
                             <ul class="dropdown-menu text-small shadow">
-                                <li><a class="dropdown-item" href="cambiar.html">Cambiar foto de perfil</a></li>
+                                  <li><a class="btn dropdown-item" data-bs-toggle="modal"
+                                        data-bs-target="#avatarModal">Cambiar foto de perfil</a></li>
                                 <li><a class="btn dropdown-item" data-bs-toggle="modal"
                                         data-bs-target="#subirModal">Subir producto</a></li>
                                 <li><a class="dropdown-item" href="#">Mi perfil</a></li>
@@ -97,6 +100,35 @@ if ($_SESSION['inicioSesion'] == true) {
                                 </li>
                                 <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
                             </ul>
+                        </div>
+
+                        
+                        <!-- Modal de cambio de avatar -->
+
+                        <div class="modal fade" id="avatarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Foto de perfil</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="../src/cambiarAvatar.php" method="post" enctype="multipart/form-data">
+                                    
+                                    <div class="col-md-12">
+                                            <label for="fileToUpload" class="form-label">Selecciona una imagen para subir:</label>
+                                            <input type="file" class="form-control" id="fileToUpload" name="fileToUpload" >
+                                     </div>
+                                    
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-primary" value="Subir Imagen" name="submit">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                               
+                            </div>
+                            </form>
+                            </div>
+                            </div>
+                        </div>
                         </div>
 
                         <!-- Modal subir producto-->
@@ -110,7 +142,7 @@ if ($_SESSION['inicioSesion'] == true) {
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form class="row g-3" action="../src/subirArticulo.php" method="post">
+                                        <form class="row g-3" action="../src/subirArticulo.php" method="post"  enctype="multipart/form-data">
                                             <div class="col-md-12">
                                                 <label for="titulo" class="form-label" name="titulo">Titulo</label>
                                                 <input type="text" class="form-control" id="titulo" name="titulo" required>
@@ -118,19 +150,19 @@ if ($_SESSION['inicioSesion'] == true) {
 
                                             <p>Selecciona el estado del artículo:</p>
                                             <div>
-                                                <input type="radio" id="nuevo" name="estado" value="nuevo">
+                                                <input class="form-check-input" type="radio" id="nuevo" name="estado" value="nuevo">
                                                 <label for="nuevo">Nuevo</label>
                                             </div>
                                             <div>
-                                                <input type="radio" id="como-nuevo" name="estado" value="como nuevo">
+                                                <input class="form-check-input" type="radio" id="como-nuevo" name="estado" value="como nuevo">
                                                 <label for="como-nuevo">Como nuevo</label>
                                             </div>
                                             <div>
-                                                <input type="radio" id="usado" name="estado" value="usado">
+                                                <input class="form-check-input" type="radio" id="usado" name="estado" value="usado" checked>
                                                 <label for="usado">Usado</label>
                                             </div>
                                             <div>
-                                                <input type="radio" id="deteriorado" name="estado" value="deteriorado">
+                                                <input class="form-check-input" type="radio" id="deteriorado" name="estado" value="deteriorado">
                                                 <label for="deteriorado">Deteriorado</label>
                                             </div>
 
@@ -172,6 +204,9 @@ if ($_SESSION['inicioSesion'] == true) {
                                                 <input type="text" class="form-control" id="cambio" name="cambio" required>
                                             </div>
 
+                                             <label for="foto">Selecciona una imagen:</label><br>
+                                                <!-- El campo de entrada tipo 'file' -->
+                                                <input type="file" name="foto" id="foto" required>
 
 
                                             <div class="modal-footer">

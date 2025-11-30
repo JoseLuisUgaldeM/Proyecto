@@ -93,11 +93,11 @@ $todos = $usuario->listarUsuarios();
                                         </div>
                                         <div class="col-md-12">
                                             <label for="segundoApellido" class="form-label">Segundo Apellido</label>
-                                            <input type="text" class="form-control" id="segundoApellido" name="segundoApellido" pattern="[a-zA-Z\s]+" required>
+                                            <input type="text" class="form-control" id="segundoApellido" name="segundoApellido" pattern="[a-zA-Z\s]+"required>
                                         </div>
                                         <div class="col-md-12">
                                             <label for="usuarioNombre" class="form-label">Nombre de usuario</label>
-                                            <input type="text" class="form-control" id="usuarioNombre" name="usuarioNombre" pattern="[a-zA-Z\s]+" required>
+                                            <input type="text" class="form-control" id="usuarioNombre" name="usuarioNombre" pattern="[a-zA-Z\s]+" >
                                         </div>
                                         <div class="col-md-12">
                                             <label for="pass" class="form-label">Contraseña</label>
