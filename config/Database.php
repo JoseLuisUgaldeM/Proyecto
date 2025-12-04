@@ -1,5 +1,6 @@
 <?php
-// Database connection class
+// Clase Database
+
 class Database {
     private $host = 'localhost';
     private $db   = 'bdtruechange';

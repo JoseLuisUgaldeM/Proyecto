@@ -2,9 +2,9 @@
 
 
 
-require ("../public/Articulos_fotos.php");
+require_once ("../public/Articulos_fotos.php");
 
-require ("../public/Articulos.php");
+require_once ("../public/Articulos.php");
 
 
 session_start(); // Iniciamos la sesión y traemos las variables globales del usuario
@@ -53,6 +53,9 @@ if(isset($_POST['publicar'])){
 
             echo "La imagen se ha subido correctamente. Ruta guardada: " . $rutaCompleta;
 
+         
+
+          
            
 
         } catch (PDOException $e) {
@@ -72,6 +75,7 @@ if(isset($_POST['publicar'])){
 
       
     }
+
 
 }
 

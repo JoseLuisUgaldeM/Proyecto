@@ -67,5 +67,20 @@ class Usuario {
         
         return false; // credenciales inválidas
     }
+
+      
+        public function crearFichero(){
+
+            $sql = 'SELECT *  from usuarios
+            INNER JOIN articulos ON articulos.usuario_id = usuarios.id 
+            INNER JOIN articulos_fotos ON articulos_fotos.articulo_id = articulos.id
+            ';
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+         return $stmt->fetchAll();
+
+        }
+    
 }
 ?>

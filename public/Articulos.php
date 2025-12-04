@@ -29,36 +29,34 @@ class Articulos
             ':estado' => $estado
 
         ]);
-
-        if ($success) {
-        return $this->db->lastInsertId();
-        } else {
-            return false; 
-        }
     }
 
-     public function buscarArticuloPorTitulo($titulo) {
+
+    public function buscarArticuloPorTitulo($titulo)
+    {
         $sql = "SELECT * FROM articulos WHERE titulo = :titulo";
         $stmt = $this->db->prepare($sql);
         $stmt->execute([':titulo' => $titulo]);
         return $stmt->fetch();
     }
 
-       public function buscarArticuloPorCategoria($categoria) {
+    public function buscarArticuloPorCategoria($categoria)
+    {
         $sql = "SELECT * FROM articulos WHERE categoria = :categoria";
         $stmt = $this->db->prepare($sql);
         $stmt->execute([':categoria' => $categoria]);
         return $stmt->fetch();
     }
 
-       public function buscarArticuloPorEstado($estado) {
+    public function buscarArticuloPorEstado($estado)
+    {
         $sql = "SELECT * FROM articulos WHERE estado = :estado";
         $stmt = $this->db->prepare($sql);
         $stmt->execute([':estado' => $estado]);
         return $stmt->fetch();
     }
 
-    
+
 
     public function listarArticulos()
     {
@@ -67,7 +65,7 @@ class Articulos
         return $stmt->fetchAll();
     }
 
-    
+
     public function listarArticulosConFoto()
     {
         $sql = "SELECT * FROM articulos a INNER JOIN articulos_fotos f ON  a.id = f.articulo_id;";
@@ -75,11 +73,12 @@ class Articulos
         return $stmt->fetchAll();
     }
 
-    public function idUltimoArticulo(){
+    public function idUltimoArticulo()
+    {
 
 
         $sql = "SELECT MAX(id) FROM articulos ";
-          $stmt = $this->db->query($sql);
-       return $stmt->fetchColumn();
+        $stmt = $this->db->query($sql);
+        return $stmt->fetchColumn();
     }
 }

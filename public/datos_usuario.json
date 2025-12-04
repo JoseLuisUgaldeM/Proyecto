@@ -1,0 +1,40 @@
+[
+    {
+        "id": 58,
+        "nombre": "Carla",
+        "apellido1": "Ugalde",
+        "apellido2": "Blanco",
+        "email": "carla@gmail.com",
+        "password": "$2y$10$e\/mEk9CR8d2.nFN\/3TeBT..7RmHoxvzJ9ptFsrE68fi2VcrjBdpP2",
+        "avatar": "..\/public\/imagenes\/uploadspexels-pixabay-159192.jpg",
+        "ciudad": "",
+        "fecha_registro": "2025-12-01 16:24:31",
+        "usuario_id": 27,
+        "titulo": "xcvxcvxvc",
+        "descripcion": "lkhlhlklkjlkjlkjl",
+        "categoria": "industria  agricultura",
+        "estado": "usado",
+        "fecha_publicacion": "2025-12-04 15:49:41",
+        "articulo_id": 73,
+        "ruta_foto": "..\/public\/imagenes\/uploads\/69319f8580219.jpg"
+    },
+    {
+        "id": 59,
+        "nombre": "Carla",
+        "apellido1": "Ugalde",
+        "apellido2": "Blanco",
+        "email": "carla@gmail.com",
+        "password": "$2y$10$e\/mEk9CR8d2.nFN\/3TeBT..7RmHoxvzJ9ptFsrE68fi2VcrjBdpP2",
+        "avatar": "..\/public\/imagenes\/uploadspexels-pixabay-159192.jpg",
+        "ciudad": "",
+        "fecha_registro": "2025-12-01 16:24:31",
+        "usuario_id": 27,
+        "titulo": "Segundo",
+        "descripcion": "dsdfsfsd",
+        "categoria": "motor y accesorios",
+        "estado": "usado",
+        "fecha_publicacion": "2025-12-04 16:06:53",
+        "articulo_id": 74,
+        "ruta_foto": "..\/public\/imagenes\/uploads\/6931a38da4b5e.jpg"
+    }
+]

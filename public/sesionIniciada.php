@@ -1,15 +1,16 @@
 <?php
 
 
-require "Usuario.php";
+require_once "Usuario.php";
 
-require "Articulos.php";
+require_once "Articulos.php";
 
 
 $database = new Database();
 
 $db = $database->getConnection();
 
+require_once "../src/crearFicheroJson.php";
 
 session_start();
 
@@ -29,6 +30,7 @@ if ($_SESSION['inicioSesion'] == true) {
 
     $nombreUsuario = $datosUsuario['nombre'];
 
+    creaYactualiza($usuario);
 
 
     $_SESSION['usuarioNombre'] = $nombreUsuario;
@@ -39,15 +41,15 @@ if ($_SESSION['inicioSesion'] == true) {
 
     $todos = $usuario->listarUsuarios();
 
-
+    header('Content-Type: text/html; charset=utf-8');
 ?>
 
     <!DOCTYPE html>
     <html lang="es">
 
     <head>
-        <link rel="stylesheet" href="estilo.css">
-        <script src="javascript.js"></script>
+        <link rel="stylesheet" href="../css/estilo.css">
+        <script src="../src/javascript.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
             integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
