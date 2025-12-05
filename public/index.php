@@ -291,7 +291,7 @@ header('Content-Type: text/html; charset=utf-8');
         <!-- Mostramos los articulos-->
 
         <div class="container my-5">
-            <h1>Catálogo de Productos</h1>
+            <h1>Artículos</h1>
             <div class="row" id="cards-container">
             </div>
         </div>

@@ -18,9 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
             // La variable 'data' ahora contiene el array de objetos del JSON
             console.log('Datos cargados:', datos);
             var cont = 0;
+
+            
+            
             // 2. Iterar sobre los datos y 3. Crear las cards
             datos.forEach(item => {
                 cont++;
+                // Calculamos los dias desde la fecha de publicacion
+                 // 1. Convertir la fecha de inicio a un objeto Date
+    const fechaInicio = new Date(item.fecha_publicacion);
+
+    
+    const fechaActual = new Date();
+
+
+    fechaInicio.setHours(0, 0, 0, 0);
+    fechaActual.setHours(0, 0, 0, 0);
+
+
+  
+    const diferenciaMilisegundos = fechaActual.getTime() - fechaInicio.getTime();
+
+  
+    const milisegundosEnUnDia = 1000 * 60 * 60 * 24;
+
+   
+    const diasTranscurridos = diferenciaMilisegundos / milisegundosEnUnDia;
+
+    
+    const intervalo = Math.floor(diasTranscurridos);
+
+
                 const cardHtml = `
                     <div class=" col-xl-2 col-lg-3  col-sm-12 col mb-4">
                         <div class="card h-100 shadow-sm">
@@ -55,11 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                         </div>
                                         <div class="border p-3 m-2">
                                         <h6>Vendedor</h6>
-                                        <p class="text-primary fw-bold mt-auto">${item.usuarioNombre}</p>
+                                        <p class="text-primary fw-bold mt-auto">${item.nombre}</p>
                                         </div>    
                                           <div class="border p-3 m-2">
                                         <h6>Fecha publicación</h6>
-                                        <p class="text-primary fw-bold mt-auto">${item.fecha_publicacion}</p>
+                                        <p class="text-primary fw-bold mt-auto">Publicado hace ${intervalo} dias</p>
                                         </div> 
                                         </div>
                                         <div class="modal-footer">

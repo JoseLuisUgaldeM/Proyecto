@@ -51,18 +51,18 @@ if(isset($_POST['publicar'])){
            
             $articulofoto->subirFotoArticulo( $articulo_id, $rutaCompleta);
 
-            echo "La imagen se ha subido correctamente. Ruta guardada: " . $rutaCompleta;
-
-         
-
-          
+                echo "<script>
+                 alert('El articulo se ha subido correctamente')
+                </script>";
            
 
         } catch (PDOException $e) {
             die("Error al guardar la ruta en la DB: " . $e->getMessage());
         }
     } else {
-        echo "Error al mover el archivo subido.";
+             echo "<script>
+             alert('Error subiendo el articulo');
+             </script>";
     }
 
         $usuarioNombre =$_SESSION['usuarioNombre'];
